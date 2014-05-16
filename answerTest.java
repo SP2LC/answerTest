@@ -31,7 +31,8 @@ static String[][] problem = new String[16][16];
     	file_read(args[1]);
     	csv_print2();
     	Comparison();
-    	cost();
+    	System .out.println("選択コスト" + Exchange_cost *Exchange);
+    	System .out.println("交換コスト" + choice_cost * choice);
     	csv_print();
     	System.out.println("");
     	csv_print2();
@@ -109,7 +110,8 @@ static String[][] problem = new String[16][16];
     	  }else if(num == 1){
     		  choice_node_x = line.charAt(0);
     		  choice_node_y = line.charAt(1);
-    		  node_choice();
+		  choice_x =  Integer.parseInt("" + choice_node_x);
+		  choice_y =  Integer.parseInt("" + choice_node_y);
     	  }else if(num == 2){
     		  tmp = line;
     		  Exchange += Integer.parseInt(tmp); 
@@ -133,10 +135,6 @@ static String[][] problem = new String[16][16];
         }
     }
 
-    public static void node_choice(){
-	    				choice_x =  Integer.parseInt("" + choice_node_x);
-	    				choice_y =  Integer.parseInt("" + choice_node_y);
-    }
 
     public static void csv_print(){
 	    for(int x = 0;x < x_length;x++){
@@ -202,17 +200,8 @@ static String[][] problem = new String[16][16];
     			}
     		}
     	}
-    	System .out.println("不一致画像数" + a);
+    	System .out.println("不一致画像数" + a);
     	
     	
     }
-
-    public static void cost(){
-    	int cost1,cost2;
-    	cost1 = Exchange_cost *Exchange;
-    	cost2 = choice_cost * choice;
-    	System .out.println("選択コスト" + cost1);
-    	System .out.println("交換コスト" + cost2);
-    }
-
-}	    
+}
